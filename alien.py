@@ -14,7 +14,7 @@ class Alien(Sprite):
         self.rect = self.image.get_rect()
 
         self.rect.x = self.rect.width
-        self.rect.y = self.rect.height
+        self.rect.y = self.rect.height * 2 + 20
 
         self.x = float(self.rect.x)
 
@@ -26,7 +26,8 @@ class Alien(Sprite):
             return True
 
     def update(self):
-        self.x += (self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction)
+        self.x += (
+                self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction)
         self.rect.x = self.x
 
     def blitme(self):
